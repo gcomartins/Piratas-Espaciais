@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piratas Espaciais | Home</title>
+    <title>Piratas Espaciais | Game</title>
     <script src="./js/classes.js"></script>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    
+    <div class="header">
+        <h1>Piratas Espaciais</h1>
+    </div>
+    <div class="container">
+        <div id="historico">  
+            <h3>Histórico</h3>        
+        </div>
+        <div class="visualizer">
+            <h3>Visualizer</h3>            
+        </div>
+        <div class="botoes">
+            <h3>Controles</h3>
+        </div>
+    </div>
 </body>
 </html>
 <script>
@@ -35,7 +49,7 @@
     const tiroCerto = new Habilidade(
         'Tiro Certo',
         'Dá um tiro certeiro no inimigo',
-        1
+        1.5
     );
     const tiroRapido = new Habilidade(
         'Tiro Rápido',
@@ -55,7 +69,7 @@
     const corteRapido = new Habilidade(
         'Corte Rápido',
         'Dá um corte rápido no inimigo',
-        0.8
+        0.9
     );
     const socoDePonta = new Habilidade(
         'Soco de Ponta',
@@ -77,11 +91,11 @@
     let equipPeito = [];
     const regataTarotXgg = new Equipamento(
         'Regata Tarot XGG',
-        3
+        4
     );
     const blusaLa = new Equipamento(
         'Blusa de Lã',
-        3
+        5
         );
     const camisaListrada = new Equipamento(
         'Camisa Listrada',
@@ -100,7 +114,7 @@
     );
     const calcaMoletom = new Equipamento(
         'Calça de Moletom',
-        2
+        3
     );
     const calcaDeAlfaiataria = new Equipamento(
         'Calça de Alfaiataria',
@@ -108,7 +122,7 @@
     );
     const calcaPreta = new Equipamento(
         'Calça Preta',
-        2
+        3
     );
     equipPerna.push(bermudaLarga, calcaMoletom, calcaDeAlfaiataria, calcaPreta);
 
@@ -224,13 +238,5 @@
         passivas[3]
     );
     personagens.push(guigas, gugas, rubinho, marcela);
-
-    // guigas.atacar1(rubinho);
-    // guigas.atacar2(rubinho);
-    // gugas.atacar1(guigas);
-    // gugas.atacar2(guigas);
-    // rubinho.atacar1(guigas);
-    // rubinho.atacar2(guigas);
-
 
 </script>
