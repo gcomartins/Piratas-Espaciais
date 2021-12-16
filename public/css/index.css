@@ -17,7 +17,7 @@
     display: flex;
     background-color: hotpink;
 }
-.container #historico{
+.container #time{
     width: 20%;
     height: 90vh;
     background-color: indigo;
@@ -31,9 +31,15 @@
     height: 90vh;
     font-size: 12px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
     background-color: lawngreen;
+}
+.container #historico{
+    width: 100%;
+    height: 20vh;
+    background-color: lime;
 }
 .container .botoes{
     width: 20%;

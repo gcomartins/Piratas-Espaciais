@@ -8,24 +8,41 @@
     <script src="./js/classes.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
+<body onload="gerarDados()">
     <div class="header">
         <h1>Piratas Espaciais</h1>
     </div>
     <div class="container">
-        <div id="historico">  
-            <h3>Histórico</h3>        
+        <div id="time">  
+            <h1>Time</h1>
+
         </div>
         <div class="visualizer">
-            <h3>Visualizer</h3>            
+            <h1>Visualizer</h1>
+            <div id="historico">
+                <h1>Histórico</h1>
+            </div>            
         </div>
         <div class="botoes">
-            <h3>Controles</h3>
+            <h1>Controles</h1>
         </div>
     </div>
 </body>
 </html>
 <script>
+    function gerarDados(){
+        time.innerHTML = ``;
+        time.innerHTML += `<h1>Time</h1>`;
+        time.inneHTML += `<h2>Guigas</h2>`;
+        time.inneHTML += `Vida: ${guigas.vida}<br>`;
+        time.innerHTML += `<h2>Gugas<h2>`;
+        time.innerHTML += `Vida: ${gugas.vida}<br>`;
+        time.innerHTML += `<h2>Rubinho</h2>`;
+        time.innerHTML += `Vida: ${rubinho.vida}<br>`;
+        time.innerHTML += `<h2>Marcela</h2>`;
+        time.innerHTML += `Vida: ${marcela.vida}<br>`
+    }
+    
     let passivas = [];
     const multipotencial = new Passiva(
         'Multipotencial',
@@ -143,7 +160,7 @@
         'Bota Preta',
         1
     );
-    equipPe.push(tenisMid, vansVerde, tenisDeCorrida);
+    equipPe.push(tenisMid, vansVerde, tenisDeCorrida, botaPreta);
 
     let armas = [];
     const rifleEnferrujado = new Arma(

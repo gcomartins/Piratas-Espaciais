@@ -13,11 +13,18 @@ class Personagem {
         if (adversario.vida <= 0) {
 
             console.log(`${adversario.nome} já está inconsciente!`);
+
+            historico.innerHTML = `<h1>Histórico<h1>`;
+
             historico.innerHTML += `<br>${adversario.nome} já está inconsciente!`
+
+            gerarDados();
 
         } else {
             
             console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`); 
+
+            historico.innerHTML = `<h1>Histórico<h1>`;
 
             historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`
     
@@ -29,6 +36,8 @@ class Personagem {
             console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
             historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
 
+            gerarDados();
+
         }
 
     }
@@ -37,11 +46,19 @@ class Personagem {
         if (adversario.vida <= 0) {
 
             console.log(`${adversario.nome} já está insconsciente!`);
+
+            historico.innerHTML = `<h1>Histórico<h1>`;
+
             historico.innerHTML += `<br>${adversario.nome} já está insconsciente!`
+
+            gerarDados();
 
         } else {
             
             console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade2.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade2.multiplicador} de dano`); 
+
+            historico.innerHTML = `<h1>Histórico<h1>`;
+
             historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade2.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade2.multiplicador} de dano`
     
             adversario.defender2(this);
@@ -51,6 +68,8 @@ class Personagem {
 
             console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
             historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
+
+            gerarDados();
                 
         }
     }
