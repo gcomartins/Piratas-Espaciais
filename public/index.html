@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piratas Espaciais | Home</title>
+    <script src="./js/classes.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let passivas = [];
+    const multipotencial = new Passiva(
+        'Multipotencial',
+        'Guigas já está acostumado a aprender coisas novas. Pode usar qualquer coisa como arma'
+    );
+    const ouvidoAbsoluto = new Passiva(
+        'Ouvido Absoluto',
+        'Gugas evoluiu seu ouvido conforme sua vida e hoje possui uma habilidade de audição muito acima do normal'
+    );
+    const entusiasta = new Passiva(
+        'Entusiasta',
+        'Rubinho se anima com qualquer coisa'
+    );
+    passivas.push(multipotencial, ouvidoAbsoluto, entusiasta);
+
+    
+    const tiroCerto = new Habilidade(
+        'Tiro Certo',
+        'Dá um tiro certeiro no inimigo',
+        1
+    );
+    const tiroRapido = new Habilidade(
+        'Tiro Rápido',
+        'Dá um tiro rápido',
+        0.5
+    );
+    const socao = new Habilidade(
+        'Socão',
+        'Dá um socão com as cordas enroladas no punho',
+        0.8
+    );
+    const finalizar = new Habilidade(
+        'Finalizar',
+        'Finaliza um inimigo com as cordas de aço',
+        100
+    );
+    const corteRapido = new Habilidade(
+        'Corte Rápido',
+        'Dá um corte rápido no inimigo',
+        0.8
+    );
+    const socoDePonta = new Habilidade(
+        'Soco de Ponta',
+        'Usa a ponta cega da espada para dar um Soco no inimigo',
+        0.6
+    );
+    
+    
+    let equipPeito = [];
+    const regataTarotXgg = new Equipamento(
+        'Regata Tarot XGG',
+        10
+    );
+    const blusaLa = new Equipamento(
+        'Blusa de Lã',
+        10
+        );
+    const camisaListrada = new Equipamento(
+        'Camisa Listrada',
+        10
+    );
+    equipPeito.push(regataTarotXgg, blusaLa, camisaListrada)
+    console.log(equipPeito);
+
+    let equipPerna = [];
+    const bermudaLarga = new Equipamento(
+        'Bermuda Larga',
+        5
+    );
+    const calcaMoletom = new Equipamento(
+        'Calça de Moletom',
+        5
+    );
+    const calcaDeAlfaiataria = new Equipamento(
+        'Calça de Alfaiataria',
+        5
+    );
+    equipPerna.push(bermudaLarga, calcaMoletom, calcaDeAlfaiataria);
+
+    let equipPe = [];
+    const tenisMid = new Equipamento(
+        'Tênis Mid',
+        5
+    );
+    const vansVerde = new Equipamento(
+        'Vans Verde',
+        5
+    );
+    const tenisDeCorrida = new Equipamento(
+        'Tênis de Corrida',
+        5
+    );
+    equipPe.push(tenisMid, vansVerde, tenisDeCorrida);
+
+    let armas = [];
+    const rifleEnferrujado = new Arma(
+        'Rifle Enferrujado',
+        'Um rifle enferrujado que o Guigas encontrou em uma de suas aventuras',
+        15,
+        {
+            habilidade1: tiroCerto,
+            habilidade2: tiroRapido
+        }
+    );
+    const cordasDeAco = new Arma(
+        'Cordas de Aço',
+        'Gugas ficou putasso que as cordas de sua guitarra arrebentaram e agora as usa para matar seus inimigos',
+        15,
+        {
+            habilidade1: socao,
+            habilidade2: finalizar
+        }
+    );
+    const espadaDePontaCega = new Arma(
+        'Espada de Ponta Cega',
+        'Uma espada velha que passou por gerações da família do Rubinho. AVISO: USE A LÂMINA',
+        15,
+        {
+            habilidade1: corteRapido,
+            habilidade2: socoDePonta
+        }
+    );
+    armas.push(rifleEnferrujado, cordasDeAco, espadaDePontaCega);
+
+    let personagens = [];
+    let guigas = new Personagem(
+        'Guigas',
+        21,
+        'Cowboy',
+        {
+            arma: armas[0],
+            peito: equipPeito[0],
+            pernas: equipPerna[0],
+            pes: equipPe[0]
+        },
+        {
+            passiva: passivas[0],
+        }
+    );
+    let gugas = new Personagem(
+        'Gugas',
+        20,
+        'Cowboy',
+        {
+            arma: armas[1],
+            peito: equipPeito[1],
+            pernas: equipPerna[1],
+            pes: equipPe[1]
+        },
+        {
+            passiva: passivas[1],
+        }
+    );
+    let rubinho = new Personagem(
+        'Rubinho',
+        20,
+        'Cowboy',
+        {
+            arma: armas[2],
+            peito: equipPeito[2],
+            pernas: equipPerna[2],
+            pes: equipPe[2]
+        },
+        {
+            passiva: passivas[2],
+        }
+    );
+    personagens.push(guigas, gugas, rubinho);
+    console.log(personagens);
+
+    console.log(guigas.atacar(rubinho));
+    console.log(rubinho.defender(guigas));
+    console.log(rubinho.atacar(guigas));
+    console.log(guigas.levar(rubinho));
+
+</script>
