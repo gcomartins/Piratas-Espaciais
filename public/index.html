@@ -138,6 +138,7 @@
 
     let personagens = [];
     let guigas = new Personagem(
+        100,
         'Guigas',
         21,
         'Cowboy',
@@ -147,11 +148,10 @@
             pernas: equipPerna[0],
             pes: equipPe[0]
         },
-        {
-            passiva: passivas[0],
-        }
+        passivas[0],
     );
     let gugas = new Personagem(
+        100,
         'Gugas',
         20,
         'Cowboy',
@@ -160,12 +160,11 @@
             peito: equipPeito[1],
             pernas: equipPerna[1],
             pes: equipPe[1]
-        },
-        {
-            passiva: passivas[1],
-        }
+        }, 
+        passivas[1],
     );
     let rubinho = new Personagem(
+        100,
         'Rubinho',
         20,
         'Cowboy',
@@ -174,17 +173,17 @@
             peito: equipPeito[2],
             pernas: equipPerna[2],
             pes: equipPe[2]
-        },
-        {
-            passiva: passivas[2],
-        }
+        },  
+        passivas[2],
     );
     personagens.push(guigas, gugas, rubinho);
     console.log(personagens);
 
-    console.log(guigas.atacar(rubinho));
+    console.log(guigas.atacar1(rubinho));
+    console.log(guigas.atacar2(rubinho));
     console.log(rubinho.defender(guigas));
-    console.log(rubinho.atacar(guigas));
+    console.log(rubinho.atacar1(guigas));
+    console.log(rubinho.atacar2(guigas));
     console.log(guigas.levar(rubinho));
 
 </script>
