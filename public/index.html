@@ -25,7 +25,11 @@
         'Entusiasta',
         'Rubinho se anima com qualquer coisa'
     );
-    passivas.push(multipotencial, ouvidoAbsoluto, entusiasta);
+    const enfurecida = new Passiva(
+        'Enfurecida',
+        'O primeiro ataque após levar dano dá 15% a mais de dano'
+    );
+    passivas.push(multipotencial, ouvidoAbsoluto, entusiasta, enfurecida);
 
     
     const tiroCerto = new Habilidade(
@@ -58,51 +62,72 @@
         'Usa a ponta cega da espada para dar um Soco no inimigo',
         0.6
     );
+    const ataqueGiratorio = new Habilidade(
+        'Ataque Giratório',
+        'Roda sua lança dando dano em área',
+        0.6
+    );
+    const corteDiagonal = new Habilidade(
+        'Corte Diagonal',
+        'Dá um corte em direção diagonal no peito do inimigo',
+        0.8
+    );
     
     
     let equipPeito = [];
     const regataTarotXgg = new Equipamento(
         'Regata Tarot XGG',
-        10
+        3
     );
     const blusaLa = new Equipamento(
         'Blusa de Lã',
-        10
+        3
         );
     const camisaListrada = new Equipamento(
         'Camisa Listrada',
-        10
+        3
     );
-    equipPeito.push(regataTarotXgg, blusaLa, camisaListrada)
-    console.log(equipPeito);
+    const camisaPirata = new Equipamento(
+        'Camisa Pirata',
+        3
+    );
+    equipPeito.push(regataTarotXgg, blusaLa, camisaListrada, camisaPirata)
 
     let equipPerna = [];
     const bermudaLarga = new Equipamento(
         'Bermuda Larga',
-        5
+        2
     );
     const calcaMoletom = new Equipamento(
         'Calça de Moletom',
-        5
+        2
     );
     const calcaDeAlfaiataria = new Equipamento(
         'Calça de Alfaiataria',
-        5
+        2
     );
-    equipPerna.push(bermudaLarga, calcaMoletom, calcaDeAlfaiataria);
+    const calcaPreta = new Equipamento(
+        'Calça Preta',
+        2
+    );
+    equipPerna.push(bermudaLarga, calcaMoletom, calcaDeAlfaiataria, calcaPreta);
 
     let equipPe = [];
     const tenisMid = new Equipamento(
         'Tênis Mid',
-        5
+        1
     );
     const vansVerde = new Equipamento(
         'Vans Verde',
-        5
+        1
     );
     const tenisDeCorrida = new Equipamento(
         'Tênis de Corrida',
-        5
+        1
+    );
+    const botaPreta = new Equipamento(
+        'Bota Preta',
+        1
     );
     equipPe.push(tenisMid, vansVerde, tenisDeCorrida);
 
@@ -134,7 +159,16 @@
             habilidade2: socoDePonta
         }
     );
-    armas.push(rifleEnferrujado, cordasDeAco, espadaDePontaCega);
+    const lancaDeDuasPontas = new Arma(
+        'Lança de Duas Pontas',
+        'Uma lança velha com duas pontas que causa um dano avassalador',
+        15,
+        {
+            habilidade1: ataqueGiratorio,
+            habilidade2: corteDiagonal
+        }
+    );
+    armas.push(rifleEnferrujado, cordasDeAco, espadaDePontaCega, lancaDeDuasPontas);
 
     let personagens = [];
     let guigas = new Personagem(
@@ -176,14 +210,27 @@
         },  
         passivas[2],
     );
-    personagens.push(guigas, gugas, rubinho);
-    console.log(personagens);
+    let marcela = new Personagem(
+        100,
+        'Marcela',
+        16,
+        'Cowboy',
+        {
+            arma: armas[3],
+            peito: equipPeito[3],
+            pernas: equipPerna[3],
+            pes: equipPe[3]
+        },
+        passivas[3]
+    );
+    personagens.push(guigas, gugas, rubinho, marcela);
 
-    console.log(guigas.atacar1(rubinho));
-    console.log(guigas.atacar2(rubinho));
-    console.log(rubinho.defender(guigas));
-    console.log(rubinho.atacar1(guigas));
-    console.log(rubinho.atacar2(guigas));
-    console.log(guigas.levar(rubinho));
+    // guigas.atacar1(rubinho);
+    // guigas.atacar2(rubinho);
+    // gugas.atacar1(guigas);
+    // gugas.atacar2(guigas);
+    // rubinho.atacar1(guigas);
+    // rubinho.atacar2(guigas);
+
 
 </script>
