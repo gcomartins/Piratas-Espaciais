@@ -18,7 +18,6 @@ class Personagem {
 
             historico.innerHTML += `<br>${adversario.nome} já está inconsciente!`
 
-            gerarDados();
 
         } else {
             
@@ -36,9 +35,9 @@ class Personagem {
             console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
             historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
 
-            gerarDados();
-
+            
         }
+        gerarDados();
 
     }
     atacar2(adversario){
@@ -51,7 +50,6 @@ class Personagem {
 
             historico.innerHTML += `<br>${adversario.nome} já está insconsciente!`
 
-            gerarDados();
 
         } else {
             
@@ -69,9 +67,9 @@ class Personagem {
             console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
             historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
 
-            gerarDados();
-                
+            
         }
+        gerarDados();
     }
 
     defender1(adversario){
