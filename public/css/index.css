@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Montserrat:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
 * {
+    font-family: 'montserrat';
     margin: 0;
     padding: 0;
+}
+h1 {
+    color: rgb(221, 178, 35);
+    background-color: rgb(22, 22, 22);
+    width: 100%;
 }
 .header h1{
     width: 100%;
@@ -9,19 +16,24 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: crimson;
+    color: rgb(221, 178, 35);
+    background-color: rgb(22, 22, 22);
 }
 .container{
+    color: seashell;
     width: 100%;
     height: 100vh;
     display: flex;
     background-color: hotpink;
 }
+.container h1{
+    font-size: 16px;
+    
+}
 .container #time{
     width: 20%;
     height: 90vh;
     background-color: indigo;
-    font-size: 12px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -36,6 +48,10 @@
     text-align: center;
     background-color: lawngreen;
 }
+.container .tela {
+    width: 100%;
+    height: 70vh;
+}
 .container #historico{
     width: 100%;
     height: 20vh;
@@ -47,6 +63,37 @@
     background-color:lightseagreen;
     font-size: 12px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
+}
+.container .controles{
+    background-color: rgb(22, 22, 22);
+    margin: auto;
+    width: 90%;
+    height: 50vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+.container .controles button{
+    background-color: rgb(22, 22, 22);
+    border: 3px solid rgb(221, 178, 35);
+    color: rgb(221, 178, 35);
+    border-radius: 7px;
+    cursor: pointer;
+    width: 75%;
+    height: 25px;
+    transition: 0.5s;
+}
+.container .controles button:hover{
+    background-color: rgb(221, 178, 35);
+    color: rgb(22, 22, 22);
+    font-size: larger;
+    font-weight: bold;
+    width: 90%;
+    height: 35px;
+    transition: 0.5s;
 }
