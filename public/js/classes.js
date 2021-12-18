@@ -73,15 +73,16 @@ class Personagem {
             alert('Você passou um parâmetro que não ativa a função atacar()')
         }
         
-        gerarDados();
+        gerarDadosTime();
     }
     
     defender(adversario, habilidade){
         
-        let dano = adversario.equipamento.arma.dano*adversario.equipamento.arma.habilidades.habilidade1.multiplicador;
         let defesa = this.equipamento.peito.armadura + this.equipamento.pernas.armadura + this.equipamento.pes.armadura;
-
+        
         if (habilidade == 1) {
+
+            let dano = adversario.equipamento.arma.dano*adversario.equipamento.arma.habilidades.habilidade1.multiplicador;
             
             if (Math.random() > 0.2) {
 
@@ -100,6 +101,8 @@ class Personagem {
             }
 
         } else if (habilidade == 2){
+
+            let dano = adversario.equipamento.arma.dano*adversario.equipamento.arma.habilidades.habilidade2.multiplicador;
 
             if (Math.random() > 0.2) {
 

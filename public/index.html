@@ -8,14 +8,18 @@
     <script src="./js/classes.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
-<body onload="gerarDados()">
+<body onload="gerarDadosTime()">
     <div class="header">
         <h1>Piratas Espaciais</h1>
     </div>
     <div class="container">
-        <div id="time">  
-            <h1>Time</h1>
-
+        <div id="vidas">
+            <div id="time">
+                <h1>Time</h1>
+            </div>  
+            <div id="inimigos">
+                <h1>Inimigos</h1>
+            </div>
         </div>
         <div class="visualizer">   
             <div class="tela">
@@ -46,7 +50,7 @@
 </body>
 </html>
 <script>
-    function gerarDados(){
+    function gerarDadosTime(){
         time.innerHTML = ``;
         time.innerHTML += `<h1>Time</h1>`;
         time.innerHTML += `<h2>Guigas</h2>`;
@@ -57,7 +61,6 @@
         time.innerHTML += `Vida: ${rubinho.vida}<br>`;
         time.innerHTML += `<h2>Marcela</h2>`;
         time.innerHTML += `Vida: ${marcela.vida}<br>`;
-        time.innerHTML += `<h1>Inimigos</h1>`
     }
     
     let passivas = [];
