@@ -10,120 +10,59 @@ class Personagem {
 
     atacar(adversario, habilidade){
 
-        if (habilidade == 1) {
-            
-            if (adversario.vida <= 0) {
+        if (adversario.vida <= 0) {
     
-                console.log(`${adversario.nome} já está inconsciente!`);
-    
-                historico.innerHTML = `<h1>Histórico<h1>`;
-    
-                historico.innerHTML += `<br>${adversario.nome} já está inconsciente!`
-    
-    
-            } else {
-                
-                console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`); 
-    
-                historico.innerHTML = `<h1>Histórico<h1>`;
-    
-                historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`
-        
-                adversario.defender(this, 1);
-        
-                console.log(`Vida ${this.nome}: ${this.vida}`);
-                historico.innerHTML += `<br>Vida ${this.nome}: ${this.vida}`
-        
-                console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
-                historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
-    
-                
-            }
-        } else if (habilidade == 2){
+            console.log(`${adversario.nome} já está inconsciente!`);
 
-            if (adversario.vida <= 0) {
+            historico.innerHTML = `<h1>Histórico<h1>`;
 
-                console.log(`${adversario.nome} já está insconsciente!`);
-    
-                historico.innerHTML = `<h1>Histórico<h1>`;
-    
-                historico.innerHTML += `<br>${adversario.nome} já está insconsciente!`
-    
-    
-            } else {
-                
-                console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade2.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade2.multiplicador} de dano`); 
-    
-                historico.innerHTML = `<h1>Histórico<h1>`;
-    
-                historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade2.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade2.multiplicador} de dano`
-        
-                adversario.defender(this, 2);
-        
-                console.log(`Vida ${this.nome}: ${this.vida}`);
-                historico.innerHTML += `<br>Vida ${this.nome}: ${this.vida}`
-    
-                console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
-                historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
-    
-                
-            }
+            historico.innerHTML += `<br>${adversario.nome} já está inconsciente!`
+
 
         } else {
-            alert('Você passou um parâmetro que não ativa a função atacar()')
+            
+            console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades["habilidade" + habilidade].nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades["habilidade" + habilidade].multiplicador} de dano`); 
+
+            historico.innerHTML = `<h1>Histórico<h1>`;
+
+            historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades["habilidade" + habilidade].nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades["habilidade" + habilidade].multiplicador} de dano`;
+    
+            adversario.defender(this, habilidade);
+    
+            console.log(`Vida ${this.nome}: ${this.vida}`);
+            historico.innerHTML += `<br>Vida ${this.nome}: ${this.vida}`;
+    
+            console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
+            historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`;
+     
         }
         
         gerarDadosTime();
+
     }
     
     defender(adversario, habilidade){
         
         let defesa = this.equipamento.peito.armadura + this.equipamento.pernas.armadura + this.equipamento.pes.armadura;
         
-        if (habilidade == 1) {
+        let dano = adversario.equipamento.arma.dano*adversario.equipamento.arma.habilidades["habilidade" + habilidade].multiplicador;
 
-            let dano = adversario.equipamento.arma.dano*adversario.equipamento.arma.habilidades.habilidade1.multiplicador;
-            
-            if (Math.random() > 0.2) {
+        if (Math.random() > 0.2) {
 
-                this.vida -= dano-defesa;
-    
-                console.log(`${this.nome} defendeu o ataque de ${adversario.nome} e tomou ${dano - defesa} de dano de ${adversario.nome}`);
-                historico.innerHTML += `<br>${this.nome} defendeu o ataque de ${adversario.nome} e tomou ${dano - defesa} de dano de ${adversario.nome}`
-    
-            } else {
-    
-                this.vida -= dano;
-    
-                console.log(`${this.nome} tomou ${dano} de dano de ${adversario.nome}`);
-                historico.innerHTML += `<br>${this.nome} tomou ${dano} de dano de ${adversario.nome}`
-    
-            }
+            this.vida -= dano-defesa;
 
-        } else if (habilidade == 2){
-
-            let dano = adversario.equipamento.arma.dano*adversario.equipamento.arma.habilidades.habilidade2.multiplicador;
-
-            if (Math.random() > 0.2) {
-
-                this.vida -= dano-defesa;
-    
-                console.log(`${this.nome} defendeu o ataque de ${adversario.nome} e tomou ${dano - defesa} de dano de ${adversario.nome}`);
-                historico.innerHTML += `<br>${this.nome} defendeu o ataque de ${adversario.nome} e tomou ${dano - defesa} de dano de ${adversario.nome}` 
-                
-            } else {
-    
-                this.vida -= dano;
-                
-                console.log(`${this.nome} tomou ${dano} de dano de ${adversario.nome}`);
-                historico.innerHTML += `<br>${this.nome} tomou ${dano} de dano de ${adversario.nome}` 
-    
-            }
+            console.log(`${this.nome} defendeu o ataque de ${adversario.nome} e tomou ${dano - defesa} de dano de ${adversario.nome}`);
+            historico.innerHTML += `<br>${this.nome} defendeu o ataque de ${adversario.nome} e tomou ${dano - defesa} de dano de ${adversario.nome}`;
 
         } else {
-            alert('Você passou parâmetro errado para a função defender()')
+
+            this.vida -= dano;
+
+            console.log(`${this.nome} tomou ${dano} de dano de ${adversario.nome}`);
+            historico.innerHTML += `<br>${this.nome} tomou ${dano} de dano de ${adversario.nome}`;
+
         }
-   
+
     }
     
 }
