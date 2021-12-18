@@ -8,38 +8,104 @@ class Personagem {
         this.passiva= passiva;
     }
 
-    atacar1(adversario){
+    atacar(adversario, habilidade){
+
+        if (habilidade == 1) {
+            
+            if (adversario.vida <= 0) {
+    
+                console.log(`${adversario.nome} já está inconsciente!`);
+    
+                historico.innerHTML = `<h1>Histórico<h1>`;
+    
+                historico.innerHTML += `<br>${adversario.nome} já está inconsciente!`
+    
+    
+            } else {
+                
+                console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`); 
+    
+                historico.innerHTML = `<h1>Histórico<h1>`;
+    
+                historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`
         
-        if (adversario.vida <= 0) {
+                adversario.defender1(this);
+        
+                console.log(`Vida ${this.nome}: ${this.vida}`);
+                historico.innerHTML += `<br>Vida ${this.nome}: ${this.vida}`
+        
+                console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
+                historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
+    
+                
+            }
+        } else if (habilidade == 2){
 
-            console.log(`${adversario.nome} já está inconsciente!`);
+            if (adversario.vida <= 0) {
 
-            historico.innerHTML = `<h1>Histórico<h1>`;
-
-            historico.innerHTML += `<br>${adversario.nome} já está inconsciente!`
-
+                console.log(`${adversario.nome} já está insconsciente!`);
+    
+                historico.innerHTML = `<h1>Histórico<h1>`;
+    
+                historico.innerHTML += `<br>${adversario.nome} já está insconsciente!`
+    
+    
+            } else {
+                
+                console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade2.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade2.multiplicador} de dano`); 
+    
+                historico.innerHTML = `<h1>Histórico<h1>`;
+    
+                historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade2.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade2.multiplicador} de dano`
+        
+                adversario.defender2(this);
+        
+                console.log(`Vida ${this.nome}: ${this.vida}`);
+                historico.innerHTML += `<br>Vida ${this.nome}: ${this.vida}`
+    
+                console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
+                historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
+    
+                
+            }
 
         } else {
-            
-            console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`); 
-
-            historico.innerHTML = `<h1>Histórico<h1>`;
-
-            historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`
-    
-            adversario.defender1(this);
-    
-            console.log(`Vida ${this.nome}: ${this.vida}`);
-            historico.innerHTML += `<br>Vida ${this.nome}: ${this.vida}`
-    
-            console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
-            historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
-
-            
+            alert('Você passou um parâmetro que não ativa a função atacar()')
         }
+        
         gerarDados();
-
     }
+    // atacar1(adversario){
+        
+    //     if (adversario.vida <= 0) {
+
+    //         console.log(`${adversario.nome} já está inconsciente!`);
+
+    //         historico.innerHTML = `<h1>Histórico<h1>`;
+
+    //         historico.innerHTML += `<br>${adversario.nome} já está inconsciente!`
+
+
+    //     } else {
+            
+    //         console.log(`${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`); 
+
+    //         historico.innerHTML = `<h1>Histórico<h1>`;
+
+    //         historico.innerHTML += `<br>${this.nome} atacou ${adversario.nome} com ${this.equipamento.arma.habilidades.habilidade1.nome} e pode causar ${this.equipamento.arma.dano*this.equipamento.arma.habilidades.habilidade1.multiplicador} de dano`
+    
+    //         adversario.defender1(this);
+    
+    //         console.log(`Vida ${this.nome}: ${this.vida}`);
+    //         historico.innerHTML += `<br>Vida ${this.nome}: ${this.vida}`
+    
+    //         console.log(`Vida ${adversario.nome}: ${adversario.vida}`);
+    //         historico.innerHTML += `<br>Vida ${adversario.nome}: ${adversario.vida}`
+
+            
+    //     }
+    //     gerarDados();
+    // }
     atacar2(adversario){
 
         if (adversario.vida <= 0) {
