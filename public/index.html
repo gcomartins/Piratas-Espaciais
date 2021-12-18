@@ -55,12 +55,24 @@
         time.innerHTML += `<h1>Time</h1>`;
         time.innerHTML += `<h2>Guigas</h2>`;
         time.innerHTML += `Vida: ${guigas.vida}<br>`;
+        time.innerHTML += `
+        <div style = "width: ${(guigas.vida/100)*100}%; height: 5px; background-color: blue"></div>
+        `;
         time.innerHTML += `<h2>Gugas<h2>`;
         time.innerHTML += `Vida: ${gugas.vida}<br>`;
+        time.innerHTML += `
+        <div style = "width: ${(gugas.vida/100)*100}%; height: 5px; background-color: blue"></div>
+        `;
         time.innerHTML += `<h2>Rubinho</h2>`;
         time.innerHTML += `Vida: ${rubinho.vida}<br>`;
+        time.innerHTML += `
+        <div style = "width: ${(rubinho.vida/100)*100}%; height: 5px; background-color: blue"></div>
+        `;
         time.innerHTML += `<h2>Marcela</h2>`;
         time.innerHTML += `Vida: ${marcela.vida}<br>`;
+        time.innerHTML += `
+        <div style = "width: ${(marcela.vida/100)*100}%; height: 5px; background-color: blue"></div>
+        `;
     }
     
     let passivas = [];
