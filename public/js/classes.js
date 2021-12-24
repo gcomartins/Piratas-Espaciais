@@ -43,7 +43,7 @@ class Personagem {
     
     defender(adversario, habilidade){
         
-        let defesa = this.equipamento.peito.armadura + this.equipamento.pernas.armadura + this.equipamento.pes.armadura;
+        let defesa = this.equipamento.cabeca.armadura + this.equipamento.peito.armadura + this.equipamento.pernas.armadura + this.equipamento.pes.armadura;
         
         let dano = adversario.equipamento.arma.dano*adversario.equipamento.arma.habilidades["habilidade" + habilidade].multiplicador;
 
@@ -62,9 +62,7 @@ class Personagem {
             historico.innerHTML += `<br>${this.nome} tomou ${dano} de dano de ${adversario.nome}`;
 
         }
-
-    }
-    
+    }    
 }
 class Equipamento {
     constructor(nome, armadura){
